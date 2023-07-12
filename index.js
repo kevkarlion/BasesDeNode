@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { faker } = require('@faker-js/faker');
 
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler');
@@ -13,6 +14,7 @@ const port = 3000;
 
 //para poder usar los post, necesito el express.json
 app.use(express.json());
+app.use(cors());
 
 
 // -- req es la petición que llega al servidor, y res es la respuesta que el servidor entregará.
@@ -24,6 +26,7 @@ app.get('/', (req, res) => {
 
 //-- Funcion que llama a los endpoints
 routerApi(app);
+
 
 
 app.use(logErrors);
