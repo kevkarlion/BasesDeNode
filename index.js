@@ -13,8 +13,23 @@ const port = 3000;
 
 
 //para poder usar los post, necesito el express.json
+
+
+const whiteList = ['http://localhost:8080', 'https://myapp.co'];
+
+const options = {
+  origin: (origin, callback) => {
+    if (whiteList.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido'));
+    };
+  },
+};
+
 app.use(express.json());
-app.use(cors());
+
+app.use(cors(options));
 
 
 // -- req es la petición que llega al servidor, y res es la respuesta que el servidor entregará.
