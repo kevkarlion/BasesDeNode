@@ -27,9 +27,11 @@ const options = {
   },
 };
 
+app.use(cors(options));
+
 app.use(express.json());
 
-app.use(cors(options));
+
 
 
 // -- req es la petición que llega al servidor, y res es la respuesta que el servidor entregará.

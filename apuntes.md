@@ -149,3 +149,13 @@ Uses Cases:
 
 
   //--- Prueba de commit con ssh a github
+
+
+
+Recomendaciones para producción:
+CORS
+HTTPS
+PROCESOS DE BUILD
+REMOVER LOGS
+SEGURIDAD (HELMET) - MIDDLEWARES PARA SEGURIDAD
+TESTING
