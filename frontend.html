@@ -7,12 +7,13 @@
 <title>Document</title>
 </head>
 <body>
-<script>
-    (async ()=> {
-      const response = await fetch('http://localhost:3000/api/v1/products');
-      const data = await response.json();
-      console.log(data);
-    })();
-  </script>
+  <h1>Probando HTML!</h1>
+  <script>
+      (async ()=> {
+        const response = await fetch('http://localhost:3000/api/v1/products');
+        const data = await response.json();
+        console.log(data);
+      })();
+    </script>
 </body>
 </html>

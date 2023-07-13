@@ -12,7 +12,15 @@ const app = express();
 const port = 3000;
 
 
+
 //para poder usar los post, necesito el express.json
+app.use(express.json());
+
+
+
+
+
+
 
 
 const whiteList = ['http://localhost:8080', 'https://myapp.co'];
@@ -20,16 +28,18 @@ const whiteList = ['http://localhost:8080', 'https://myapp.co'];
 const options = {
   origin: (origin, callback) => {
     if (whiteList.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('No permitido'));
-    };
-  },
-};
+       callback(null, true);
+     } else {
+       callback(new Error('No permitido'));
+     };
+   },
+  };
 
 app.use(cors(options));
 
-app.use(express.json());
+
+
+
 
 
 
